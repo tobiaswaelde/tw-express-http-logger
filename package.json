@@ -15,5 +15,10 @@
 		"name": "Tobias Wälde",
 		"url": "https://tobiaswaelde.com"
 	},
-	"license": "ISC"
+	"license": "ISC",
+	"dependencies": {
+		"@types/express": "^4.17.6",
+		"express": "^4.17.1",
+		"tw-logger": "^1.0.4"
+	}
 }
