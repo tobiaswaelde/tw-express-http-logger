@@ -33,9 +33,9 @@ export default function httpLogger(req: Request, res: Response, next: NextFuncti
 			// dev environment: apply colors
 			logger.http(
 				`${ConsoleColors.Magenta}${method}${ConsoleColors.Reset}` +
-					`${ConsoleColors.White}${route}${ConsoleColors.Reset}` +
-					`${statusColor}${status}${ConsoleColors.Reset}` +
-					`${ConsoleColors.Blue}${duration}${ConsoleColors.Reset}` +
+					` ${ConsoleColors.White}${route}${ConsoleColors.Reset}` +
+					` ${statusColor}${status}${ConsoleColors.Reset}` +
+					` ${ConsoleColors.Blue}${duration}${ConsoleColors.Reset}` +
 					` - ${ConsoleColors.Reset}${bytesSent}${ConsoleColors.Red}↑` +
 					` ${ConsoleColors.Reset}${bytesReceived}${ConsoleColors.Green}↓`
 			);

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.colorFromStatusCode = void 0;
 const tw_logger_1 = require("tw-logger");
 /**
  * **Get color from status code**
