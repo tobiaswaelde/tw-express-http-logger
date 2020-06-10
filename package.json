@@ -1,5 +1,5 @@
 {
-	"name": "express-http-logger",
+	"name": "tw-express-http-logger",
 	"version": "1.0.0",
 	"description": "HTTP logging middleware for express",
 	"repository": {
