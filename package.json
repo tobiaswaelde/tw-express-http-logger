@@ -4,7 +4,8 @@
 	"description": "HTTP logging middleware for express",
 	"repository": {
 		"type": "git",
-		"url": "git@gitlab.com:tw-custom-modules/tw-express-http-logger.git"
+		"url": "https://github.com/tobiaswaelde/tw-express-http-logger.git",
+		"directory": "./"
 	},
 	"main": "./dist/index.js",
 	"scripts": {
