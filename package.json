@@ -1,0 +1,19 @@
+{
+	"name": "express-http-logger",
+	"version": "1.0.0",
+	"description": "HTTP logging middleware for express",
+	"repository": {
+		"type": "git",
+		"url": "git@gitlab.com:tw-custom-modules/tw-express-http-logger.git"
+	},
+	"main": "./dist/index.js",
+	"scripts": {
+		"build": "tsc --declaration && cp ./dist/index.d.ts ./index.d.ts"
+	},
+	"author": {
+		"email": "tobias.waelde@gmail.com",
+		"name": "Tobias Wälde",
+		"url": "https://tobiaswaelde.com"
+	},
+	"license": "ISC"
+}
