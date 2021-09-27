@@ -25,7 +25,7 @@ const util_1 = require("./util/util");
  * Log all HTTP requests
  */
 function httpLogger(options) {
-    const logger = (0, tw_logger_1.default)(options);
+    tw_logger_1.default.config(options);
     return function x(req, res, next) {
         const start = Date.now();
         res.on('finish', () => {
@@ -42,7 +42,7 @@ function httpLogger(options) {
             const bytesSent = req.get('content-length') || 0;
             const bytesReceived = res.get('content-length') || 0;
             if (options.consoleOutput) {
-                logger.http(`${tw_logger_1.ConsoleColors.Magenta}${method}${tw_logger_1.ConsoleColors.Reset}` +
+                tw_logger_1.default.http(`${tw_logger_1.ConsoleColors.Magenta}${method}${tw_logger_1.ConsoleColors.Reset}` +
                     ` ${tw_logger_1.ConsoleColors.White}${route}${tw_logger_1.ConsoleColors.Reset}` +
                     ` ${statusColor}${status}${tw_logger_1.ConsoleColors.Reset}` +
                     ` ${tw_logger_1.ConsoleColors.Blue}${duration}${tw_logger_1.ConsoleColors.Reset}` +
@@ -50,7 +50,7 @@ function httpLogger(options) {
                     ` ${tw_logger_1.ConsoleColors.Reset}${bytesReceived}${tw_logger_1.ConsoleColors.Green}↓`);
             }
             else {
-                logger.http(`${method} ${route} ${status} ${duration} ms - ${bytesSent}/${bytesReceived}`);
+                tw_logger_1.default.http(`${method} ${route} ${status} ${duration} ms - ${bytesSent}/${bytesReceived}`);
             }
         });
         return next();

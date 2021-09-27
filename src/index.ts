@@ -1,12 +1,12 @@
 import { Request, Response, NextFunction } from 'express';
-import twLogger, { ConsoleColors, LoggerOptions } from 'tw-logger';
+import logger, { ConsoleColors, LoggerOptions } from 'tw-logger';
 import { colorFromStatusCode } from './util/util';
 
 /**
  * Log all HTTP requests
  */
 export default function httpLogger(options: Partial<LoggerOptions>) {
-	const logger = twLogger(options);
+	logger.config(options);
 
 	return function x(req: Request, res: Response, next: NextFunction) {
 		const start = Date.now();
