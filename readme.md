@@ -1,6 +1,9 @@
 # HTTP Logger Middleware
 
 ## Basic Usage
+
+##### logger.ts
+
 TypeScript
 ```ts
 // app.ts
@@ -12,7 +15,7 @@ import httpLogger from 'tw-express-http-logger';
 const app: Application = express();
 
 // Apply middleware
-app.use(httpLogger);
+app.use(httpLogger());
 
 export default app;
 ```
