@@ -5,8 +5,8 @@ import { colorFromStatusCode } from './util/util';
 /**
  * Log all HTTP requests
  */
-export default function httpLogger(options: Partial<LoggerOptions>) {
-	logger.config(options);
+export default function httpLogger(options?: Partial<LoggerOptions>) {
+	if (options) logger.config(options);
 
 	return function x(req: Request, res: Response, next: NextFunction) {
 		const start = Date.now();
@@ -30,7 +30,7 @@ export default function httpLogger(options: Partial<LoggerOptions>) {
 			const bytesSent = req.get('content-length') || 0;
 			const bytesReceived = res.get('content-length') || 0;
 
-			if (!options.silent) {
+			if (!options?.silent) {
 				logger.http(
 					`${ConsoleColors.Magenta}${method}${ConsoleColors.Reset}` +
 						` ${ConsoleColors.White}${route}${ConsoleColors.Reset}` +

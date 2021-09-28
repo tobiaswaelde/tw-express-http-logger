@@ -25,7 +25,8 @@ const util_1 = require("./util/util");
  * Log all HTTP requests
  */
 function httpLogger(options) {
-    tw_logger_1.default.config(options);
+    if (options)
+        tw_logger_1.default.config(options);
     return function x(req, res, next) {
         const start = Date.now();
         res.on('finish', () => {
@@ -41,7 +42,7 @@ function httpLogger(options) {
             const statusColor = (0, util_1.colorFromStatusCode)(status);
             const bytesSent = req.get('content-length') || 0;
             const bytesReceived = res.get('content-length') || 0;
-            if (!options.silent) {
+            if (!(options === null || options === void 0 ? void 0 : options.silent)) {
                 tw_logger_1.default.http(`${tw_logger_1.ConsoleColors.Magenta}${method}${tw_logger_1.ConsoleColors.Reset}` +
                     ` ${tw_logger_1.ConsoleColors.White}${route}${tw_logger_1.ConsoleColors.Reset}` +
                     ` ${statusColor}${status}${tw_logger_1.ConsoleColors.Reset}` +
