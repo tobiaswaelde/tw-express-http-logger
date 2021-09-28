@@ -1,6 +1,6 @@
 {
 	"name": "tw-express-http-logger",
-	"version": "3.0.1",
+	"version": "3.0.2",
 	"description": "HTTP logging middleware for express",
 	"repository": {
 		"type": "git",
