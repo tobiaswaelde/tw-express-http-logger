@@ -41,7 +41,7 @@ function httpLogger(options) {
             const statusColor = (0, util_1.colorFromStatusCode)(status);
             const bytesSent = req.get('content-length') || 0;
             const bytesReceived = res.get('content-length') || 0;
-            if (options.consoleOutput) {
+            if (!options.silent) {
                 tw_logger_1.default.http(`${tw_logger_1.ConsoleColors.Magenta}${method}${tw_logger_1.ConsoleColors.Reset}` +
                     ` ${tw_logger_1.ConsoleColors.White}${route}${tw_logger_1.ConsoleColors.Reset}` +
                     ` ${statusColor}${status}${tw_logger_1.ConsoleColors.Reset}` +

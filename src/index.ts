@@ -30,7 +30,7 @@ export default function httpLogger(options: Partial<LoggerOptions>) {
 			const bytesSent = req.get('content-length') || 0;
 			const bytesReceived = res.get('content-length') || 0;
 
-			if (options.consoleOutput) {
+			if (!options.silent) {
 				logger.http(
 					`${ConsoleColors.Magenta}${method}${ConsoleColors.Reset}` +
 						` ${ConsoleColors.White}${route}${ConsoleColors.Reset}` +
